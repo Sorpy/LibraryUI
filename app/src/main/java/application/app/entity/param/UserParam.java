@@ -1,6 +1,10 @@
-package application.app.entity;
+package application.app.entity.param;
 
-public class LoginEntity {
+import application.app.entity.base.Persistent;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserParam extends Persistent {
 
     private String username;
     private String password;

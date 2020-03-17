@@ -1,0 +1,37 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>SECOND NAME</th>
+        <th>LAST NAME</th>
+        <th>ADDRESS</th>
+        <th>CITY</th>
+        <th>COUNTRY</th>
+        <th>PHONE</th>
+        <th>EMAIL</th>
+        <th>ACCOUNT STATUS</th>
+        <th>ACTION</th>
+    </tr>
+    <tr th:each="entity : ${entity}">
+        <td th:text="${entity.firstName}">Onions</td>
+        <td th:text="${entity.secondName}">2.41</td>
+        <td th:text="${entity.lastName}">yes</td>
+        <td th:text="${entity.address}">Onions</td>
+        <td th:text="${entity.city}">2.41</td>
+        <td th:text="${entity.country}">yes</td>
+        <td th:text="${entity.phone}">Onions</td>
+        <td th:text="${entity.email}">2.41</td>
+        <td th:text="${entity.accountStatusName}">yes</td>
+        <td><a href="account-edit.html" th:href="@{/account/edit/{id}(id=${entity.id}, token=${token})}">Edit</a>
+            <a href="account-edit.html" th:href="@{/account/delete/{id}(id=${entity.id}, token=${token})}">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>

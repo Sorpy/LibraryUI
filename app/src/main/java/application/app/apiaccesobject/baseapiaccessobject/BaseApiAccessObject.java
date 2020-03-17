@@ -1,13 +1,15 @@
 package application.app.apiaccesobject.baseapiaccessobject;
 
-public interface BaseApiAccessObject <IN> {
+import application.app.entity.base.Persistent;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 
-    String postRequest(IN param);
+public interface BaseApiAccessObject{
+    ResponseEntity<String> postRequest(String uri, HttpEntity<String> httpEntity);
 
-    String getRequest();
+    String getRequest(String uri, HttpEntity<String> httpEntity);
 
-    String deleteRequest();
+    ResponseEntity<String> deleteRequest(String uri, HttpEntity<String> httpEntity);
 
-    String putRequest();
-
+    ResponseEntity<String> putRequest(String uri, HttpEntity<String> httpEntity);
 }
